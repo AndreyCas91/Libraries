@@ -1,30 +1,16 @@
 package com.gb.libraries
 
-class MainPresenter(private val view: MainView) {
+import com.github.terrakok.cicerone.Router
+import moxy.MvpPresenter
 
-    private val model = CounterModel()
+class MainPresenter(val router: Router, val screen: IScreens) : MvpPresenter<MainView>() {
 
-    fun counterClick(id: ButtonSelection) {
-        when (id) {
-            ButtonSelection.FIRST -> {
-                val nextValve = model.next(0)
-                view.setButtonText(0, nextValve.toString())
-            }
-            ButtonSelection.SECOND -> {
-                val nextValve = model.next(1)
-                view.setButtonText(1, nextValve.toString())
-            }
-            ButtonSelection.THIRD -> {
-                val nextValve = model.next(2)
-                view.setButtonText(2, nextValve.toString())
-            }
-        }
-
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        router.replaceScreen(screen.users())
     }
 
-    enum class ButtonSelection {
-        FIRST,
-        SECOND,
-        THIRD
+    fun backClicked() {
+        router.exit()
     }
 }
