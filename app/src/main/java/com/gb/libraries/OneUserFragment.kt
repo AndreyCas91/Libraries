@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.gb.libraries.databinding.FragmentUserBinding
 import moxy.MvpAppCompatFragment
+import moxy.ktx.moxyPresenter
 
 
-class OneUserFragment : MvpAppCompatFragment()/*, BackButtonListener*/ {
+class OneUserFragment : MvpAppCompatFragment(),UserView, BackButtonListener {
 
 
     private var _binding: FragmentUserBinding? = null
@@ -17,7 +18,7 @@ class OneUserFragment : MvpAppCompatFragment()/*, BackButtonListener*/ {
             return _binding!!
         }
 
-//    private val presenter: OneUserPresenter by moxyPresenter { OneUserPresenter(App.instance!!.router, AndroidScreens()) }
+    private val presenter: OneUserPresenter by moxyPresenter { OneUserPresenter(App.instance!!.router, AndroidScreens()) }
 
 
 
@@ -55,6 +56,6 @@ class OneUserFragment : MvpAppCompatFragment()/*, BackButtonListener*/ {
             }
     }
 
-//    override fun backPressed() = presenter.backPressed()
+    override fun backPressed() = presenter.backPressed()
 
 }

@@ -31,13 +31,15 @@ class UsersPresenter(val usersRepo: GithubUsersRepo, val router: Router, val scr
     }
 
     fun loadData() {
+
         val users = usersRepo.getUsers()
-        usersListPresenter.users.addAll(users)
+        users?.subscribe(){
+            usersListPresenter.users.addAll(it)
+        }
         viewState.updateList()
     }
 
     fun backPressed(): Boolean{
-        router.exit()
         return true
     }
 
