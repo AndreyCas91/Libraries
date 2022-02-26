@@ -1,4 +1,4 @@
-package com.gb.libraries
+package com.gb.libraries.ui.base
 
 interface BackButtonListener {
 
