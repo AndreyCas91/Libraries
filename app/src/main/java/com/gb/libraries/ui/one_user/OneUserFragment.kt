@@ -1,16 +1,17 @@
-package com.gb.libraries
+package com.gb.libraries.ui.one_user
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.gb.libraries.App
+import com.gb.libraries.ui.base.BackButtonListener
 import com.gb.libraries.databinding.FragmentUserBinding
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
 
-class OneUserFragment : MvpAppCompatFragment(),UserView, BackButtonListener {
-
+class OneUserFragment : MvpAppCompatFragment(), BackButtonListener {
 
     private var _binding: FragmentUserBinding? = null
     private val binding: FragmentUserBinding
@@ -18,7 +19,7 @@ class OneUserFragment : MvpAppCompatFragment(),UserView, BackButtonListener {
             return _binding!!
         }
 
-    private val presenter: OneUserPresenter by moxyPresenter { OneUserPresenter(App.instance!!.router, AndroidScreens()) }
+    private val presenter: OneUserPresenter by moxyPresenter { OneUserPresenter(App.instance!!.router) }
 
 
 
