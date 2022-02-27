@@ -1,6 +1,7 @@
 package com.gb.libraries.ui.users
 
-import com.gb.libraries.domain.IGithubUsersRepository
+import com.gb.libraries.domain.users.IGithubUsersRepository
+import com.gb.libraries.model.GithubUserModel
 import com.gb.libraries.screens.AppScreens
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -33,11 +34,11 @@ class UsersPresenter(
     }
 
     fun backPressed(): Boolean {
-        router.exit()
         return true
     }
 
-    fun onUserClicked() {
-        router.replaceScreen(AppScreens.oneUserScreen())
+    fun onUserClicked(githubUserModel: GithubUserModel) {
+
+        router.navigateTo(AppScreens.oneUserScreen(githubUserModel))
     }
 }

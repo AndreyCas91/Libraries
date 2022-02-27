@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/fragment_user.xml" value="0.13020833333333334" />
+        <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/fragment_repos.xml" value="0.18704710144927536" />
+        <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/fragment_user.xml" value="0.264" />
         <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/fragment_users.xml" value="0.13020833333333334" />
+        <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/item_language.xml" value="0.18704710144927536" />
+        <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/item_repos.xml" value="0.18704710144927536" />
         <entry key="..\:/Project/MyProject/Libraries/app/src/main/res/layout/item_user.xml" value="0.13020833333333334" />
       </map>
     </option>

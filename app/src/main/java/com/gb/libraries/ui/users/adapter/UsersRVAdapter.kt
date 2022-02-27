@@ -12,7 +12,7 @@ import com.gb.libraries.ui.base.ImageLoader
 
 class UsersRVAdapter(
     private val imageLoader: ImageLoader<ImageView>,
-    private val itemClickListener: (GithubUserModel) -> Unit,
+    private val itemClickListener: (GithubUserModel) -> Unit
 ) : ListAdapter<GithubUserModel, UsersRVAdapter.UserViewHolder>(GithubUserItemCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {

@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gb.libraries.*
 import com.gb.libraries.databinding.FragmentUsersBinding
-import com.gb.libraries.domain.GithubUsersRepo
+import com.gb.libraries.domain.users.GithubUsersRepo
 import com.gb.libraries.model.GithubUserModel
 import com.gb.libraries.network.ApiHolder
 import com.gb.libraries.ui.base.BackButtonListener
@@ -32,11 +31,7 @@ class UsersFragment : MvpAppCompatFragment(), UsersView, BackButtonListener {
         get() = _binding!!
 
     private val adapter by lazy {
-        UsersRVAdapter(GlideImageLoader()) { presenter.onUserClicked() }
-    }
-
-    private val initModel by lazy {
-
+        UsersRVAdapter(GlideImageLoader(), presenter::onUserClicked)
     }
 
     override fun onCreateView(
