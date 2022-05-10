@@ -5,16 +5,11 @@ import com.google.gson.annotations.Expose
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class GithubUserModel(
+data class GithubOneUserModel(
     @Expose
-    val id: Long,
+    val name: String,
 
     @Expose
-    val login: String,
+    val language: String
 
-    @Expose
-    val avatarUrl: String? = null,
-
-    @Expose
-    val reposUrl: String? = null
-): Parcelable
+) : Parcelable
